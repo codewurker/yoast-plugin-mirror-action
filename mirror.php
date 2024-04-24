@@ -71,7 +71,10 @@ function get_required_input( $name ) {
 /**
  * Setup.
  */
-$yoast_url       = get_required_input( 'yoast-url' );
+$yoast_url = get_required_input( 'yoast-url' );
+
+$yoast_product_slug = get_required_input( 'yoast-product-slug' );
+
 $plugin_basename = get_required_input( 'plugin-basename' );
 $plugin_slug     = dirname( $plugin_basename );
 
@@ -118,8 +121,8 @@ $subscriptions = $result->subscriptions;
 
 $subscriptions = array_filter(
 	$subscriptions,
-	function ( $ubscription ) use ( $plugin_slug ) {
-		return ( $plugin_slug === $ubscription->product->slug );
+	function ( $ubscription ) use ( $yoast_product_slug ) {
+		return ( $yoast_product_slug === $ubscription->product->slug );
 	}
 );
 
