@@ -119,7 +119,7 @@ $subscriptions = $result->subscriptions;
 $subscriptions = array_filter(
 	$subscriptions,
 	function ( $ubscription ) use ( $plugin_slug ) {
-		return ( $plugin_slug === $$ubscription->product->slug );
+		return ( $plugin_slug === $ubscription->product->slug );
 	}
 );
 
