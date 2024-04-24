@@ -1,0 +1,27 @@
+name: 'Yoast plugin mirror automation'
+description: 'Automate Yoast plugin mirroring on GitHub.'
+author: 'codewurker'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'orange'
+
+inputs:
+  yoast-url:
+    description: >
+      Yoast URL.
+    required: true
+  plugin-basename:
+    description: >
+      Yoast plugin basename.
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - id: mirror
+      run: php ${{ github.action_path }}/mirror.php
+      shell: bash
+      env:
+        INPUT_YOAST-URL: ${{ inputs.yoast-url }}
+        INPUT_PLUGIN-BASENAME: ${{ inputs.plugin-basename }}
