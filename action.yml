@@ -15,6 +15,10 @@ inputs:
     description: >
       Yoast product slug.
     required: true
+  plugin-basename:
+    description: >
+      Yoast plugin basename.
+    required: true
 
 runs:
   using: 'composite'
@@ -25,3 +29,4 @@ runs:
       env:
         INPUT_YOAST-URL: ${{ inputs.yoast-url }}
         INPUT_YOAST-PRODUCT-SLUG: ${{ inputs.yoast-product-slug }}
+        INPUT_PLUGIN-BASENAME: ${{ inputs.plugin-basename }}
