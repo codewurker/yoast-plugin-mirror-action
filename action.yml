@@ -11,9 +11,9 @@ inputs:
     description: >
       Yoast URL.
     required: true
-  plugin-basename:
+  yoast-product-slug:
     description: >
-      Yoast plugin basename.
+      Yoast product slug.
     required: true
 
 runs:
@@ -24,4 +24,4 @@ runs:
       shell: bash
       env:
         INPUT_YOAST-URL: ${{ inputs.yoast-url }}
-        INPUT_PLUGIN-BASENAME: ${{ inputs.plugin-basename }}
+        INPUT_YOAST-PRODUCT-SLUG: ${{ inputs.yoast-product-slug }}
